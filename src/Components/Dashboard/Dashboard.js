@@ -37,7 +37,9 @@ export default class Dashboard extends Component {
 
     return (
       <div>
-        {inventoryList}
+        <div>
+          {inventoryList}
+        </div>
 
         <div>Image URL:
           <input
