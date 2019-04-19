@@ -24,3 +24,5 @@ app.get("/api/inventory", productCtrl.request)
 app.post("/api/product", productCtrl.create)
 
 app.delete("/api/inventory/:id", productCtrl.delete)
+
+app.put("/api/inventory/:id", productCtrl.)

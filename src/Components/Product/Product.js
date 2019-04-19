@@ -19,12 +19,14 @@ export default class Product extends Component {
 
   render() {
 
+    let { image, name, price } = this.state
+
     return (
       <div>
-        <img width="200" src={`${this.state.image}`} alt="#" />
+        <img width="200" src={`${image}`} alt="#" />
         <div>
-          <div>{this.state.name}</div>
-          <div>{`$${this.state.price}`}</div>
+          <div>{name}</div>
+          <div>{`$${price}`}</div>
         </div>
 
         <div>

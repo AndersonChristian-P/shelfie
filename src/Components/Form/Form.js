@@ -26,7 +26,8 @@ export default class Form extends Component {
     this.setState({
       name: "",
       price: 0,
-      image: ""
+      image: "",
+      id: null
     })
   }
 
@@ -37,6 +38,9 @@ export default class Form extends Component {
     this.handleClickCancel()
   }
 
+  componentDidUpdate() {
+
+  }
 
 
   render() {

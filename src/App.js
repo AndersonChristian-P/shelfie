@@ -13,12 +13,15 @@ class App extends Component {
     super()
 
     this.state = {
-      inventory: []
+      inventory: [],
+      product: {}
     }
+
+    this.getInventory = this.getInventory.bind(this)
 
   }
 
-  getInventory = () => {
+  getInventory() {
     axios.get("/api/inventory")
       .then(res => {
         this.setState({
@@ -37,7 +40,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Dashboard inventory={this.state.inventory} getInventory={this.getInventory} />
-        <Form getInventory={this.getInventory} />
+        <Form getInventory={this.getInventory} product={this.state.product} />
 
       </div>
     );
