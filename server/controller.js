@@ -6,9 +6,15 @@ module.exports = {
       .then(response => {
         res.status(200).send(response)
       })
-    // .catch(err => {
-    //   res.status(500).console.log(`request err ${err}`)
-    // })
+  },
+
+  create: (req, res) => {
+    const db = req.app.get("db")
+    let { name, price, image } = req.body
+    db.create_product([name, price, image])
+      .then(response => {
+        res.status(200).send(response)
+      })
   }
 
 
