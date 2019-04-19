@@ -7,14 +7,13 @@ export default class Dashboard extends Component {
     super(props)
 
     this.state = {
-      inventory: this.props.inventory
     }
   }
 
   render() {
 
-    let inventoryList = this.state.inventory.map((product, i) => {
-      return <Product key={i} product={product}></Product>
+    let inventoryList = this.props.inventory.map((product, i) => {
+      return <Product key={i} product={product} />
     })
 
     return (
