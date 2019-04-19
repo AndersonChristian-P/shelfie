@@ -32,7 +32,7 @@ export default class Dashboard extends Component {
   render() {
 
     let inventoryList = this.state.inventory.map((product, i) => {
-      return <Product key={i} >{}</Product>
+      return <Product key={i} product={product}></Product>
     })
 
     return (
