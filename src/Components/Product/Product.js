@@ -5,7 +5,7 @@ export default class Product extends Component {
     super(props)
 
     this.state = {
-      imageUrl: this.props.product.imageUrl,
+      image: this.props.product.image,
       name: this.props.product.name,
       price: this.props.product.price
     }
@@ -14,7 +14,7 @@ export default class Product extends Component {
   render() {
     return (
       <div>
-        <img width="200" src={this.state.imageUrl} alt="#" />
+        <img width="200" src={this.state.image} alt="#" />
         <div>
           <div>{this.state.name}</div>
           <div>{`${this.state.price}`}</div>
