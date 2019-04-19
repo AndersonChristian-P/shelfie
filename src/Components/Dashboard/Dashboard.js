@@ -8,24 +8,29 @@ export default class Dashboard extends Component {
 
     this.state = {
       inventory: this.props.inventory,
-      imageUrl: "",
       name: "",
-      price: 0
+      price: 0,
+      imageUrl: ""
     }
+
+    this.handleClickCancel = this.handleClickCancel.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+
   }
 
-  handleChange = (event) => {
+  handleChange(event) {
     let { value, name } = event.target
     this.setState({
       [name]: value
     })
   }
 
-  handleClickCancel = () => {
+  handleClickCancel() {
+    console.log(this.state)
     this.setState({
-      imageUrl: "",
       name: "",
-      price: 0
+      price: 0,
+      imageUrl: ""
     })
   }
 
