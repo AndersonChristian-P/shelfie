@@ -12,10 +12,9 @@ export default class Form extends Component {
     }
 
     this.handleClickCancel = this.handleClickCancel.bind(this)
-    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     let { value, name } = event.target
     this.setState({
       [name]: value
