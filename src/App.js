@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from "axios"
 
 import './App.css';
 
@@ -12,20 +13,22 @@ class App extends Component {
     super()
 
     this.state = {
-      inventory: [
-        {
-          name: "shoes",
-          price: 50.26,
-          imageUrl: "https://assets.adidas.com/images/h_600,f_auto,q_auto:sensitive,fl_lossy/6a8f277daf5f4748a739a998016785f4_9366/Asweerun_Shoes_White_F36340_01_standard.jpg"
-        },
-        {
-          name: "jeans",
-          price: 20.32,
-          imageUrl: "https://www.childrensplace.com/wcsstore/GlobalSAS/images/tcp/products/500/2082147_1303.jpg"
-        }
-      ]
+      inventory: []
     }
   }
+
+  componentDidMount() {
+    axios.get("/api/inventory")
+      .then(res => {
+        this.setState({
+          inventory: res.data
+        })
+      })
+      .catch(err => {
+        console.log(`GET err ${err}`)
+      })
+  }
+
 
 
   render() {
