@@ -23,7 +23,6 @@ export default class Form extends Component {
   }
 
   handleClickCancel() {
-    console.log(this.state)
     this.setState({
       name: "",
       price: 0,
@@ -33,7 +32,6 @@ export default class Form extends Component {
 
   handleClickAdd = () => {
     let body = this.state
-    console.log(this.state)
     axios.post(`/api/product`, body)
       .then(this.props.getInventory)
     this.handleClickCancel()
