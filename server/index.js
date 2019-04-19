@@ -19,3 +19,5 @@ massive(CONNECTION_STRING).then(dbInstance => {
   .catch(err => {
     console.log(`massive err ${err}`)
   })
+
+app.get("/api/inventory", productCtrl.request)
