@@ -44,7 +44,7 @@ export default class Form extends Component {
   render() {
     return (
       <div>
-        <img src={this.state.image} alt="" />
+        <img width="200" src={this.state.image} alt="" />
         <div>Image URL:
           <input
             onChange={this.handleChange}
